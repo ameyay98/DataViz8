@@ -69,13 +69,11 @@
 
     function zoomed() {
         var xz = d3.event.transform.rescaleX(x);
-        var yz = d3.event.transform.rescaleY(y);
+
         g.select(".axis--x")
             .call(d3.axisBottom(x).scale(xz));
-        g.select(".axis--y")
-            .call(d3.axisLeft(x).scale(yz));
         line.x(function(d) { return xz(d.date); })
-            .y(function(d) { return yz(d.temperature); });
+            .y(function(d) { return y(d.temperature); });
 
         lines.attr("d", function(d){return line(d.values);});
     }
