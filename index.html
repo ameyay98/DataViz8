@@ -85,7 +85,7 @@
     }
 
     function drawChartsWithFilters(filterData){
-        d3.tsv("data.tsv", type, function(error, data) {
+        d3.tsv("https://raw.githubusercontent.com/ameyay98/DataViz8/main/data.tsv", type, function(error, data) {
             if (error) {
                 console.log(error);
             }
